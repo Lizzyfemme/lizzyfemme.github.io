@@ -14,18 +14,14 @@ fetch("https://services.grassriots.io/")
      .then(weatherData => {
         
          let markup = `
-                         <li>
                              <p>Time: ${weatherData.daily.time}</p>
                              <p>Precipitation: ${weatherData.daily.precipitation_sum}mm</p>
                              <p>Precipitation Probability: ${weatherData.daily.precipitation_probability_max}%</p>
                              <p>Temperature: ${weatherData.daily.temperature_2m_max}&#8451;</p>
                              <p>Wind Speed: ${weatherData.daily.wind_speed_10m_max}kmh</p>
                              <p>Weather Code:${weatherData.daily.weather_code}</p>
-                         </li>
          `
-         document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
-         console.log(weatherObject)
-      
+         document.getElementById('weather').insertAdjacentHTML('beforeend',markup);    
         })
 })
 
